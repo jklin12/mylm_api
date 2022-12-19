@@ -66,6 +66,9 @@ class CustomerController extends Controller
      */
     public function show($id)
     {
+        $message = "Customer Data found";
+        $status = 200;
+
         $customer = Customer::select(
             DB::raw('t_customer.cust_number'),
             'cust_name',
@@ -86,12 +89,16 @@ class CustomerController extends Controller
             ->leftJoin('trel_cust_pkg', 't_customer.cust_number', '=', 'trel_cust_pkg.cust_number')
             ->LeftJoin('t_service_pkg', 'trel_cust_pkg.sp_code', '=', 't_service_pkg.sp_code')
             ->find($id);
-
-        $load['message'] = "Customer Data found";
+ 
+        if (!$customer) {
+            $message = "Customer Data  not found";
+            $status = 200;
+        }
+        $load['message'] = $message;
         $load['data'] = $customer;
 
         return response()
-            ->json($load);
+            ->json($load, $status);
     }
 
     /**
