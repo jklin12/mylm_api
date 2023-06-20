@@ -16,12 +16,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $password = substr(md5(rand()), 0, 7);
+
         $user = [
             [
-                'username' => 'desknet_dev',
-                'name' => 'desknet_dev',
-                'email' => 'desknet@lifemedia.id',
-                'password' => bcrypt('desknet_dev'),
+                'username' => 'JP002167',
+                'password' => bcrypt($password),
+                'password_txt' => ($password),
                 'level' => 0,
             ],
         ];

@@ -1,0 +1,1 @@
+[{"Name":"_TESTCOOKIESUPPORT","Value":"1","Domain":"172.16.187.250","Path":"\/","Max-Age":null,"Expires":null,"Secure":false,"Discard":false,"HttpOnly":true},{"Name":"SID","Value":"ed553bfb5d0bf513ed2b2a9b82642019","Domain":"172.16.187.250","Path":"\/","Max-Age":null,"Expires":null,"Secure":false,"Discard":false,"HttpOnly":true}]
